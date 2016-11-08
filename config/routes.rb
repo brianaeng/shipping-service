@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'estimates', to: 'estimates#index', as: 'index'
+  get 'shipping/log', to: 'estimates#requests_log', as: 'requests_log'
+
+  get 'shipping/:service_id', to: 'estimates#shipping_rate', as: 'shipping_rate'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
