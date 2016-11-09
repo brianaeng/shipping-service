@@ -18,10 +18,10 @@ class EstimatesController < ApplicationController
     #This will get all estimates from shipping providers
     package = ActiveShipping::Package.new((params[:weight].to_i * 16), [15, 10, 4.5])
 
-    origin = ActiveShipping::Location.new(country: 'US', zip: '98161')
+    origin = ActiveShipping::Location.new(country: 'US', state: 'WA', city: 'Seattle', zip: '98161')
 
     #Switching to only zip (can later add state and city if needed)
-    destination = ActiveShipping::Location.new(country: 'US', postal_code: params[:zip].to_s)
+    destination = ActiveShipping::Location.new(country: 'US', state: params[:state].to_s, city: params[:city].to_s, postal_code: params[:zip].to_s)
 
     #UPS ESTIMATE
     if params[:service_id].upcase == "UPS"
