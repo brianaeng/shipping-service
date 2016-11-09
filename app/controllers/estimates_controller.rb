@@ -38,11 +38,11 @@ class EstimatesController < ApplicationController
     end
 
     #Passes the estimates as json
-    if estimate != nil
+    # if estimate != nil
       render :json => estimate, :status => :ok
-    else
-      render :json => [], :status => :no_content
-    end
+    # else
+    #   render :json => estimate.errors, :status => :no_content
+    # end
   end
 
   def requests_log
