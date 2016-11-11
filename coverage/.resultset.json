@@ -1,7 +1,7 @@
 {
   "MiniTest": {
     "coverage": {
-      "/Users/brianaeng/ada/week14/shipping-service/app/models/estimate.rb": [
+      "/Users/SK/Coding/ada/14-Ada-Week-14/partner-shipping/shipping-service/app/models/estimate.rb": [
         1,
         1,
         1,
@@ -9,7 +9,7 @@
         null,
         null
       ],
-      "/Users/brianaeng/ada/week14/shipping-service/app/controllers/estimates_controller.rb": [
+      "/Users/SK/Coding/ada/14-Ada-Week-14/partner-shipping/shipping-service/app/controllers/estimates_controller.rb": [
         1,
         null,
         1,
@@ -21,54 +21,53 @@
         null,
         null,
         1,
-        7,
+        8,
         5,
         null,
         null,
         null,
-        2,
+        3,
         null,
-        2,
+        3,
         null,
-        2,
+        3,
         null,
         null,
-        2,
+        3,
         1,
         1,
         7,
         1,
         null,
         null,
-        1,
-        1,
-        20,
-        1,
-        null,
-        null,
-        null,
+        2,
+        2,
+        40,
         2,
         null,
         null,
-        1,
-        1,
         null,
+        3,
+        null,
+        null,
+        1,
+        1,
         1,
         null,
         null
       ],
-      "/Users/brianaeng/ada/week14/shipping-service/app/controllers/application_controller.rb": [
+      "/Users/SK/Coding/ada/14-Ada-Week-14/partner-shipping/shipping-service/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         null,
         null
       ],
-      "/Users/brianaeng/ada/week14/shipping-service/app/helpers/application_helper.rb": [
+      "/Users/SK/Coding/ada/14-Ada-Week-14/partner-shipping/shipping-service/app/helpers/application_helper.rb": [
         0,
         0
       ]
     },
-    "timestamp": 1478831013
+    "timestamp": 1478880196
   }
 }

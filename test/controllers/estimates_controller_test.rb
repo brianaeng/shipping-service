@@ -7,6 +7,11 @@ class EstimatesControllerTest < ActionController::TestCase
      @request.headers['Content-Type'] = Mime::JSON.to_s
    end
 
+   test "The #shipping_rate method returns JSON" do
+   	get :shipping_rate, {service_id: "USPS", weight: 10, state: "WA", city: "Bainbridge Island", zip: "98110"}
+    assert_match 'application/json', response.header['Content-Type']
+   end
+
   test "a log of Estimates should be an array including relevant attributes" do
     get :requests_log
     body = JSON.parse(response.body)

@@ -35,12 +35,11 @@ class EstimatesController < ApplicationController
     end
 
 
-    render :json => response, :status => :ok
+    	render :json => response, :status => :ok
   end
 
   def requests_log
     logs = Estimate.all
-
     render :json => logs.as_json(), :status => :ok
   end
 end
