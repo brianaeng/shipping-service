@@ -34,20 +34,12 @@ class EstimatesController < ApplicationController
       estimate = Estimate.create(name: "USPS", costs: usps_rates)
     end
 
-    if response
+
     	render :json => response, :status => :ok
-    else
-    	render :json => [], :status => :no_content
-    end
   end
 
   def requests_log
     logs = Estimate.all
-    
-    if logs
-    	render :json => logs.as_json(), :status => :ok
-    else
-    	render :json => [], :status => :no_content
-    end
+    render :json => logs.as_json(), :status => :ok
   end
 end
