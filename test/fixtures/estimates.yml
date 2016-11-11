@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+name_and_cost:
   name: MyString
-  cost: 1
+  costs: 1
 
-two:
+no_cost:
   name: MyString
-  cost: 1
+  costs:
+
+no_name:
+  name:
+  costs: 1

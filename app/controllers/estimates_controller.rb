@@ -8,9 +8,6 @@ class EstimatesController < ApplicationController
   #When a user's request does not process in a timely manner, return an error
   #Users requests should be logged so that responses could be audited
 
-
-  #Add order ID?
-
   def shipping_rate
     # if params[:weight] == nil || params[:zip] == nil
     #   render :json => [], :status => :bad_request
