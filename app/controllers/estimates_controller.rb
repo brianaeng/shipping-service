@@ -9,15 +9,11 @@ class EstimatesController < ApplicationController
   #Users requests should be logged so that responses could be audited
 
   def shipping_rate
-    # if params[:weight] == nil || params[:zip] == nil
-    #   render :json => [], :status => :bad_request
-    # end
     #This will get all estimates from shipping providers
     package = ActiveShipping::Package.new((params[:weight].to_i * 16), [15, 10, 4.5])
 
     origin = ActiveShipping::Location.new(country: 'US', state: 'WA', city: 'Seattle', zip: '98161')
 
-    #Switching to only zip (can later add state and city if needed)
     destination = ActiveShipping::Location.new(country: 'US', state: params[:state].to_s, city: params[:city].to_s, postal_code: params[:zip].to_s)
 
     #UPS ESTIMATE
@@ -45,10 +41,6 @@ class EstimatesController < ApplicationController
   def requests_log
     logs = Estimate.all
 
-    # if log != nil
-      render :json => logs.as_json(), :status => :ok
-    # else
-    #   render :json => [], :status => :no_content
-    # end
+    render :json => logs.as_json(), :status => :ok
   end
 end
