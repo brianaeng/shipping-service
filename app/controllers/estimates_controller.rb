@@ -9,6 +9,10 @@ class EstimatesController < ApplicationController
   #Users requests should be logged so that responses could be audited
 
   def shipping_rate
+    if params[:service_id].upcase != "UPS" && params[:service_id].upcase != "USPS"
+      return render :json => [], :status => :no_content
+    end
+
     #This will get all estimates from shipping providers
     package = ActiveShipping::Package.new((params[:weight].to_i * 16), [15, 10, 4.5])
 
@@ -30,12 +34,8 @@ class EstimatesController < ApplicationController
       estimate = Estimate.create(name: "USPS", costs: usps_rates)
     end
 
-    #Passes the estimates as json
-    # if estimate != nil
-      render :json => response, :status => :ok
-    # else
-    #   render :json => estimate.errors, :status => :no_content
-    # end
+
+    render :json => response, :status => :ok
   end
 
   def requests_log

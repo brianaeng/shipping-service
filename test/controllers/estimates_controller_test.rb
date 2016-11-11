@@ -28,4 +28,33 @@ class EstimatesControllerTest < ActionController::TestCase
     assert_response 200
   end
 
+  test "an unknown service_id will return no content" do
+    get :shipping_rate, {service_id: "TEST", weight: 10, state: "WA", city: "Kirkland", zip: "98034"}
+
+    assert_response 204
+  end
+
+  test "a request with no weight will return no content" do
+    get :shipping_rate, {service_id: "TEST", weight: nil, state: "WA", city: "Kirkland", zip: "98034"}
+
+    assert_response 204
+  end
+
+  test "a request with no state will return no content" do
+    get :shipping_rate, {service_id: "TEST", weight: 10, state: nil, city: "Kirkland", zip: "98034"}
+
+    assert_response 204
+  end
+
+  test "a request with no city will return no content" do
+    get :shipping_rate, {service_id: "TEST", weight: 10, state: "WA", city: nil, zip: "98034"}
+
+    assert_response 204
+  end
+
+  test "a request with no zip will return no content" do
+    get :shipping_rate, {service_id: "TEST", weight: 10, state: "WA", city: "Kirkland", zip: nil}
+
+    assert_response 204
+  end
 end
